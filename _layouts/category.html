@@ -21,7 +21,7 @@
         		{% assign sorted_services = site.categories[downcase_title] | sort:"title" %}
           	{% for post in sorted_services %}
           			<h4><a href="{{site.baseurl}}/{{post.url}}">{{post.title}}</a></h4>
-          			<p>{{post.content}}</p>
+          			<p>{{post.exerpt}}</p>
                 <p><a href="{{site.baseurl}}/{{post.url}}">View Site</a></p>
           		<hr/>
           	{%endfor%}
