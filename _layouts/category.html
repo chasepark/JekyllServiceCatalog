@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+		{% include head.html %}
+    <body>
+        {% include navigation.html %}
+        <div class="container">
+        	<div class="layout-content layout-default">
+        		<div class="row">
+          			<div class="col-md-1">
+          				<i class="icon {{page.icon}} icon-5x"></i>
+          			</div>
+          			<div class="col-md-8">
+          				<h2>{{page.title}}</h2>
+        					<p class="text-muted">{{content}}</p>
+          			</div>
+        		</div>
+        		<hr/>
+        		{% assign downcase_title = page.title | downcase %}
+        		{% assign sorted_services = site.categories[downcase_title] | sort:"title" %}
+          	{% for post in sorted_services %}
+          			<h4>{{post.title}}</h4>
+          			<p>{{post.content}}</p>
+          		</div>
+          	{%endfor%}
+        	</div>
+        </div>
+        <script type="text/javascript" src="//az452370.vo.msecnd.net/styleguide/js/latest/ats.min.js"></script>
+    </body>
+</html>

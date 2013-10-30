@@ -1,0 +1,41 @@
+---
+layout: default
+title: IT Service Catalog
+---
+<div class="row">
+	<div class="col-md-9">
+		{% assign sorted_categories = site.categories['category'] | sort:"title" %}
+		{% for post in sorted_categories | sort:"title" %}
+		<div class="{% cycle 'col-md-5', 'col-md-5 col-md-offset-1' %} well">
+			<div class="col-md-4">
+				<i class="icon {{post.icon}} icon-3x">&nbsp;</i>
+			</div>
+			<div class="col-md-8">
+				<h4><a href="{{post.url}}">{{post.title}}</a></h4>
+				{{post.exerpt}}
+			</div>
+		</div>
+		{%endfor%}
+	</div>
+	<div class="col-md-3 well hidden-sm">
+		<div class="input-group">
+		<input type="text" class="form-control" placeholder="Search All Documents">
+		<span class="input-group-btn">
+			<button class="btn btn-default">
+				<span class="icon icon-search"></span>
+			</button>
+		</span>
+	</div>
+	<hr/>
+		<ul class="list-unstyled">
+				{% assign sorted_posts = site.categories['service'] | sort:"title" %}
+				{% for post in  sorted_posts %}
+					<li><a href="{{post.url}}">{{post.title}}</a></li>
+				{%endfor%}
+		</ul>
+		{{sorted_posts.title | jsonify}}
+	</div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<script type="text/javascript">
+</script>

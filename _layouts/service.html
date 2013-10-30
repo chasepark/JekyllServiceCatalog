@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+        {% include head.html %}
+    <body>
+        {% include navigation.html %}
+        <div class="container">
+            <div class="layout-content layout-default">
+                <div class="row">
+                    <div class="col-md-1">
+                        <i class="icon {{page.icon}} icon-5x"></i>
+                    </div>
+                    <div class="col-md-8">
+                        <h2>{{page.title}}</h2>
+                    </div>
+                    </div>
+                    <hr/>
+                    <p>{{content}}</p>
+                    <p><a href="{{page.action_url}}">{{page.action_url}}</a></p>
+        <script type="text/javascript" src="//az452370.vo.msecnd.net/styleguide/js/latest/ats.min.js"></script>
+    </body>
+</html>
