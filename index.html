@@ -11,7 +11,7 @@ title: IT Service Catalog
 				<i class="icon {{post.icon}} icon-3x">&nbsp;</i>
 			</div>
 			<div class="col-md-8">
-				<h4><a href="{{site.baseurl}}/{{post.url}}">{{post.title}}</a></h4>
+				<h4><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h4>
 				{{post.exerpt}}
 			</div>
 		</div>
@@ -30,12 +30,12 @@ title: IT Service Catalog
 		<ul class="list-unstyled">
 				{% assign sorted_posts = site.categories['service'] | sort:"title" %}
 				{% for post in  sorted_posts %}
-					<li><a href="{{site.baseurl}}/{{post.url}}">{{post.title}}</a></li>
+					<li><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></li>
 				{%endfor%}
 		</ul>
-		{{sorted_posts.title | jsonify}}
 	</div>
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 <script type="text/javascript">
+
 </script>
