@@ -1,4 +1,4 @@
 name: ATS IT Service Catalog
 markdown: redcarpet
 pygments: true
-production_url: http://chasepark.github.io/JekyllServiceCatalog
+baseurl: /JekyllServiceCatalog
