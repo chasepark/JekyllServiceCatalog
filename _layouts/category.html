@@ -4,9 +4,11 @@
     <body>
         {% include navigation.html %}
         <div class="container">
+          <div class="row">
+            <div class="col-md-9">
         	<div class="layout-content layout-default">
         		<div class="row">
-          			<div class="col-md-1">
+          			<div class="col-md-2">
           				<i class="icon {{page.icon}} icon-5x"></i>
           			</div>
           			<div class="col-md-8">
@@ -20,9 +22,21 @@
           	{% for post in sorted_services %}
           			<h4>{{post.title}}</h4>
           			<p>{{post.content}}</p>
-          		</div>
+                <p><a href="{{post.action_url}}">{{post.action_url}}</a></p>
+          		<hr/>
           	{%endfor%}
+          </div>
         	</div>
+          <div class="col-md-3 well">
+            <h5>Categories</h5>
+            {% assign sorted_categories = site.categories['category'] | sort:"title" %}
+            <ul class="nav nav-pills nav-stacked">
+              {% for post in sorted_categories %}
+              <li><a href="{{site.baseurl}}/{{post.url}}">{{post.title}}</a></li>
+              {%endfor%}
+            </ul>
+          </div>
+        </div>
         </div>
         <script type="text/javascript" src="//az452370.vo.msecnd.net/styleguide/js/latest/ats.min.js"></script>
     </body>
